@@ -17,8 +17,8 @@
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     // Override the default timeout values to cope with large transfers.
     // Possible improvement: set the values from config.xml
-    configuration.timeoutIntervalForRequest = 3600.0;
-    configuration.timeoutIntervalForResource = 900.0;
+    configuration.timeoutIntervalForRequest = 900.0;
+    configuration.timeoutIntervalForResource = 3600.0;
     configuration.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
     if (headers) {
         [configuration setHTTPAdditionalHeaders:headers];
@@ -34,8 +34,8 @@
 
 - (void) downloadFiles:(NSArray *)filesList fromURL:(NSURL *)contentURL toFolder:(NSURL *)folderURL requestHeaders:(NSDictionary *)headers completionBlock:(HCPFileDownloadCompletionBlock)block {
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    configuration.timeoutIntervalForRequest = 3600.0;
-    configuration.timeoutIntervalForResource = 900.0;
+    configuration.timeoutIntervalForRequest = 900.0;
+    configuration.timeoutIntervalForResource = 3600.0;
     configuration.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
     if (headers) {
         [configuration setHTTPAdditionalHeaders:headers];
